@@ -1,9 +1,12 @@
 import pygame
+import time
 pygame.init()
-pygame.display.set_mode((200,100))
+pygame.display.set_mode((1,1))
 pygame.mixer.music.load("okay.mp3")
-pygame.mixer.music.play(0)
-
+pygame.mixer.music.play()
+time.sleep(1.5)
+pygame.mixer.music.load("despacito.mp3")
+pygame.mixer.music.play()
 clock = pygame.time.Clock()
 clock.tick(10)
 while pygame.mixer.music.get_busy():
