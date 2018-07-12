@@ -1,16 +1,11 @@
-from pygame import mixer # Load the required library
 import pygame
-background_colour = (255,255,255)
-(width, height) = (300, 200)
-screen = pygame.display.set_mode((width, height))
-pygame.display.set_caption('Tutorial 1')
-screen.fill(background_colour)
-mixer.init()
-mixer.music.load('despacito.mp3')
-mixer.music.play()
-pygame.display.flip()
-running = True
-while running:
-  for event in pygame.event.get():
-    if event.type == pygame.QUIT:
-      running = False
+pygame.init()
+pygame.display.set_mode((200,100))
+pygame.mixer.music.load("okay.mp3")
+pygame.mixer.music.play(0)
+
+clock = pygame.time.Clock()
+clock.tick(10)
+while pygame.mixer.music.get_busy():
+    pygame.event.poll()
+    clock.tick(10)
