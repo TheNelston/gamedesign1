@@ -1,11 +1,16 @@
 import shutil
 import re
 import string
+import copy
+import pygame
+import time
 columns = shutil.get_terminal_size().columns
+
 def intro():
 	print("Welcome to CIV: Command Line!".center(columns))
 	input("Press enter to begin.".center(columns))
 	print("")
+
 def start():
 	i = 0
 	while i == i:
@@ -49,9 +54,6 @@ def game():
 		d = dict(zip(letcoords,letnum))
 		col = 103
 		lin = 29
-		p1mins = 200
-		p2mins = 200
-		minlist = [p1mins, p2mins]
 		print("")
 		for player in players:
 			input("Note: At no point are you allowed to look at the other player's board; that is what we call cheating! Press enter to display the next player's board, and begin the game.".center(columns))
